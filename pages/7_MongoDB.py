@@ -19,5 +19,30 @@ st.markdown("Si no tienes la conexión real, escribe tu código usando `st.code(
 
 # ESTUDIANTE: Escribe tu código (o tu st.code teórico) a continuación
 
+st.code("""
+import pymongo
+import pandas as pd
+from pymongo import MongoClient
 
+# 1. Configurar la cadena de conexión (string de conexión)
+# Reemplaza <usuario>, <password> y <cluster> con tus datos de Atlas
+uri = "mongodb+srv://<usuario>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority"
 
+# 2. Conectarse al servidor usando MongoClient
+client = MongoClient(uri)
+
+# 3. Acceder a la base de datos 'Veterinaria' y a la colección 'mascotas'
+db = client['Veterinaria']
+collection = db['mascotas']
+
+# 4. Extraer todos los documentos de la colección
+documentos = list(collection.find())
+
+# 5. Convertir la lista de documentos en un DataFrame
+df_mongo = pd.DataFrame(documentos)
+
+# 6. Mostrar el DataFrame (ejemplo)
+# st.dataframe(df_mongo)
+
+print("Conexión teórica establecida y datos extraídos a df_mongo")
+""", language="python")

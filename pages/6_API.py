@@ -20,5 +20,13 @@ st.subheader("Tu resultado:")
 # ESTUDIANTE: Escribe tu código a continuación
 # Recuerda usar la librería requests que ya está importada arriba
 
+url = "https://pokeapi.co/api/v2/pokemon?limit=10"
+response = requests.get(url)
 
-# st.dataframe(...)
+if response.status_code == 200:
+    data = response.json()
+    lista_pokemon = data["results"]
+    df_pokemon = pd.DataFrame(lista_pokemon)
+    st.dataframe(df_pokemon)
+else:
+    st.error(f"Error al conectar con la API: {response.status_code}")

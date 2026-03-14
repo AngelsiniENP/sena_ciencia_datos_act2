@@ -17,6 +17,16 @@ En este ejercicio debes crear un DataFrame agrupando información sobre **pelíc
 
 st.subheader("Tu resultado:")
 # ESTUDIANTE: Escribe tu código a continuación
+titulos = pd.Series(["Inception", "Interstellar", "The Dark Knight", "The Prestige"])
+directores = pd.Series(["Christopher Nolan", "Christopher Nolan", "Christopher Nolan", "Christopher Nolan"])
+años = pd.Series([2010, 2014, 2008, 2006])
 
+# Uniendo las series en un DataFrame
+df_peliculas = pd.DataFrame({
+    'Título': titulos,
+    'Director': directores,
+    'Año de Estreno': años
+})
 
-# st.dataframe(...)
+# Mostrando el DataFrame
+st.dataframe(df_peliculas)

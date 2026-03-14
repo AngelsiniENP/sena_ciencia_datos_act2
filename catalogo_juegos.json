@@ -1,0 +1,27 @@
+[
+  {
+    "Titulo": "The Legend of Zelda: Breath of the Wild",
+    "Año": 2017,
+    "Consola": "Nintendo Switch"
+  },
+  {
+    "Titulo": "God of War",
+    "Año": 2018,
+    "Consola": "PS4"
+  },
+  {
+    "Titulo": "Elden Ring",
+    "Año": 2022,
+    "Consola": "Multiplataforma"
+  },
+  {
+    "Titulo": "Minecraft",
+    "Año": 2011,
+    "Consola": "Multiplataforma"
+  },
+  {
+    "Titulo": "Red Dead Redemption 2",
+    "Año": 2018,
+    "Consola": "Multiplataforma"
+  }
+]

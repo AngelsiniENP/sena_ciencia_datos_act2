@@ -16,9 +16,39 @@ Firebase es otra opción excelente adoptada por múltiples startups para almacen
 """)
 
 st.subheader("Tu resultado:")
-st.markdown("Escribe en la parte de abajo el código que usarías para lograr el objetivo. Si usas código comentado/teórico, compártelo adentro de `st.code()`.")
-
 # ESTUDIANTE: Escribe tu código a continuación
+
+st.code("""
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+import pandas as pd
+
+# 1. Cargar las credenciales desde el archivo JSON
+cred = credentials.Certificate("llave_secreta.json")
+
+# 2. Inicializar la aplicación de Firebase
+# (Se recomienda verificar si ya está inicializada para evitar errores en Streamlit)
+if not firebase_admin._apps:
+    firebase_admin.initialize_app(cred)
+
+# 3. Obtener el cliente de Firestore
+db = firestore.client()
+
+# 4. Acceder a la colección 'vehiculos' y obtener todos los documentos
+docs = db.collection("vehiculos").stream()
+
+# 5. Convertir los documentos a una lista de diccionarios
+lista_vehiculos = [doc.to_dict() for doc in docs]
+
+# 6. Crear el DataFrame final
+df_firebase = pd.DataFrame(lista_vehiculos)
+
+# 7. Mostrar el resultado (ejemplo)
+# st.dataframe(df_firebase)
+
+print("Conexión teórica a Firebase Firestore establecida")
+""", language="python")
 
 
 

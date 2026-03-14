@@ -16,6 +16,15 @@ En este ejercicio debes crear un DataFrame partiendo de una **lista de listas** 
 
 st.subheader("Tu resultado:")
 # ESTUDIANTE: Escribe tu código a continuación
+datos_inventario = [
+    ["Laptop Pro 14", "Computadores", 1200, 15],
+    ["Monitor 4K 27\"", "Periféricos", 450, 20],
+    ["Teclado Mecánico RGB", "Accesorios", 80, 50],
+    ["Mouse Gamer Inalámbrico", "Accesorios", 60, 45]
+]
 
+# Creando el DataFrame con nombres de columnas
+df_inventario = pd.DataFrame(datos_inventario, columns=['Nombre del producto', 'Categoría', 'Precio', 'Cantidad en stock'])
 
-# st.dataframe(...)
+# Mostrando el DataFrame
+st.dataframe(df_inventario)
